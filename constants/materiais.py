@@ -1,0 +1,23 @@
+materiais_info = [
+    {"nome": "Jornal", "tempo": "2 a 6 semanas", "descricao": "Biodegradável. Pode ser reciclado ou usado para compostagem."},
+    {"nome": "Papel", "tempo": "3 a 6 meses", "descricao": "Reciclável. Deve ser descartado limpo e seco."},
+    {"nome": "Embalagens de papel", "tempo": "1 a 4 meses", "descricao": "Recicláveis se não estiverem contaminadas com gordura."},
+    {"nome": "Guardanapos de papel", "tempo": "3 meses", "descricao": "Não reciclável após o uso. Ideal para compostagem se limpo."},
+    {"nome": "Pano", "tempo": "6 meses a 1 ano", "descricao": "Pode ser reutilizado ou destinado à coleta de resíduos têxteis."},
+    {"nome": "Filtro de cigarro", "tempo": "Mais de 5 anos", "descricao": "Altamente poluente. Contém resíduos tóxicos."},
+    {"nome": "Palito de fósforo", "tempo": "2 anos", "descricao": "Biodegradável, mas pode ser descartado como lixo comum."},
+    {"nome": "Madeira pintada", "tempo": "Mais de 13 anos", "descricao": "Pode liberar produtos tóxicos. Não deve ser queimada."},
+    {"nome": "Náilon", "tempo": "Mais de 20 anos", "descricao": "Não biodegradável. Deve ser reciclado em pontos específicos."},
+    {"nome": "Metal", "tempo": "Mais de 100 anos", "descricao": "Altamente reciclável. Economiza recursos naturais."},
+    {"nome": "Alumínio", "tempo": "Mais de 200 anos", "descricao": "Totalmente reciclável. Evite o descarte no lixo comum."},
+    {"nome": "Plástico", "tempo": "Mais de 400 anos", "descricao": "Não biodegradável. Polui solos e oceanos. Reciclagem é essencial."},
+    {"nome": "Vidro", "tempo": "Mais de 1000 anos", "descricao": "Reciclável infinitamente. Perigoso se quebrado."},
+    {"nome": "Borracha e Pneu", "tempo": "Tempo indeterminado", "descricao": "Deve ser descartado em pontos de coleta específicos. Altamente poluente."},
+    {"nome": "Chiclete", "tempo": "5 anos", "descricao": "Não biodegradável. Prejudica vias públicas e ambientes naturais."},
+    {"nome": "Cascas de frutas", "tempo": "3 meses", "descricao": "Orgânico. Ideal para compostagem."},
+    {"nome": "Copinhos de plástico", "tempo": "200 a 450 anos", "descricao": "Descartável, mas reciclável. Substitua por copos reutilizáveis."},
+    {"nome": "Latas de alumínio", "tempo": "100 a 500 anos", "descricao": "Reciclável. Um dos materiais mais reciclados do mundo."},
+    {"nome": "Tampinhas de garrafa", "tempo": "100 a 500 anos", "descricao": "Recicláveis. Pode acumular água parada e gerar focos de dengue."},
+    {"nome": "Pilhas e baterias", "tempo": "100 a 500 anos", "descricao": "Contêm metais pesados. Devem ser descartadas em pontos de coleta específicos."},
+    {"nome": "Fralda descartável", "tempo": "600 anos", "descricao": "Altamente poluente. Deve ser descartada corretamente. Evite o uso excessivo."}
+]
