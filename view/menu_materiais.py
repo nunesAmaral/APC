@@ -4,6 +4,7 @@ from constants.materiais import materiais_info
 from shared.shared_service import set_material_selecionado
 from view.header import exibe_header
 from view.lixeira import exibe_lixeira
+from view.menu_decomposicao import exibe_menu_decomposicao
 
 
 def exibe_menu_materiais():
@@ -32,6 +33,13 @@ def exibe_menu_materiais():
     selecionado = materiais_info[indice]
     print(selecionado)
     set_material_selecionado(selecionado)
+    
+    while True:
+        continua = exibe_menu_decomposicao()
+        if not continua: 
+            break
+        else:
+            exibe_menu_materiais()
 
     time.sleep(2)
 
