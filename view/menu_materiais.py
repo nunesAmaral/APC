@@ -31,7 +31,7 @@ def exibe_menu_materiais():
         opcao_selecionada = input("Digite a opção: ")
 
     selecionado = materiais_info[indice]
-    print(selecionado)
+
     set_material_selecionado(selecionado)
     
     while True:
