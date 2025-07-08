@@ -1,9 +1,14 @@
 import shutil
 
+# Calcula largura do terminal com a lib de utilitários do shell.
+largura = shutil.get_terminal_size().columns   
+
 def exibe_header(texto):
-    print("***********************************************".center(20))
-    print(texto.center(20))
-    print("***********************************************".center(20))
+    # largura do menu.
+    decoracao = "*"*91
+    print(decoracao.center(largura))
+    print(texto.center(largura))
+    print(decoracao.center(largura))
     
     
 def exibe_titulo():
@@ -21,10 +26,7 @@ def exibe_titulo():
                                                       | $$                                                            
                                                       |__/  
   
-  """
-  
-  # Calcula largura do terminal com a lib de utilitários do shell.
-  largura = shutil.get_terminal_size().columns    
+  """ 
   
   # forma para centralizar a ASCII Art no terminal sem bagaçar tudo.
   for linha in titulo.splitlines():
