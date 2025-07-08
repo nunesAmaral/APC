@@ -26,12 +26,10 @@ def exibe_titulo():
   # Calcula largura do terminal com a lib de utilitários do shell.
   largura = shutil.get_terminal_size().columns    
   
-  # forma para centralizar a ASCII Art no terminal sem bagunçar a bagaça toda
+  # forma para centralizar a ASCII Art no terminal sem bagaçar tudo.
   for linha in titulo.splitlines():
     print(linha.center(largura))
-
    
-  
   # Centraliza texto conforme largura do terminal.
   texto = "PRESSIONE ENTER PARA INICIAR!!".center(largura)     
   input(texto)
