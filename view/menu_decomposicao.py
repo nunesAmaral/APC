@@ -21,11 +21,11 @@ def exibe_menu_decomposicao():
         time.sleep(0.01)
 
     if material['tempo_anos'][0] <= tempo_em_anos < material['tempo_anos'][1]:
-        print(f'{material["nome"]} ainda está em decomposição!!!')
+        print(f'{material["nome"]} ainda estará em decomposição!!!')
 
         
     if  material['tempo_anos'][1] <= tempo_em_anos:
-        print(f"{material['nome']} e a natureza se tornaram um só.")
+        print(f"{material['nome']} se tornou um só com a natureza.")
         
     continuar_execucao = input('Deseja consultar outro material? (S/N) ').upper() == 'S'
     
