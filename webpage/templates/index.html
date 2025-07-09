@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>DESCARTE BEM</title>
+  </head>
+  <body>
+    <main>
+      <section id="hero">
+        <header>
+          <span class="logo">DESCARTE BEM</span>
+          <a href="#"></a>
+        </header>
+
+        <div class="hero__grid">
+          <div class="box-1">
+            <h2>Aprenda a forma correta de descartar o seu lixo.</h2>
+            <img src="{{ url_for('static', filename='resources/lixeiras.png') }}" alt="lixeiras recicláveis">
+          </div>
+
+          <div class="box-2">
+            <h4>Descubra o tempo de decomposição do seu lixo</h4>
+            <a href="#simular-decomposicao"
+              >Descobrir
+         
+                 <svg
+                width="32"
+                height="28"
+                viewBox="0 0 47 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 21H45.5M45.5 21L26.5 2M45.5 21L26.5 40"
+                  stroke="#085C44"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                />
+              </svg>
+             
+            </a>
+          </div>
+
+          <div class="box-3">
+            <h4>Encontre centros de reciclagem em Brasília.</h4>
+             <a href="#centros-reciclagem"
+              >Procurar
+              <svg
+                width="32"
+                height="28"
+                viewBox="0 0 47 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 21H45.5M45.5 21L26.5 2M45.5 21L26.5 40"
+                  stroke="#085C44"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="formas-descarte">
+        <div class="formas-descarte__info">
+           <h2>Como posso contribuir ao meio ambiente ao descartar meu lixo?</h2>
+          <p>
+           Torne-se um agente protagonista no processo de preservação do meio ambiente cuidando do seu lixo. Você pode fazer isso separando os resíduos recicláveis dos orgânicos, descartando cada lixo no local apropriado. Isso economiza recursos naturais e reduz a quantidade de lixo em aterros sanitários. Pelas pequenas atitudes cotidianas podemos contribuir para promover um mundo mais sustentável!
+          </p>
+          <img src="{{ url_for('static', filename='resources/descarte.jpg') }}" alt="Lixeira reciclável">
+        </div>
+       
+
+        <div>
+          <h4>Como identificar as lixeiras</h4>
+          <div class="lista-lixeiras">
+          <div>
+            <div class="lixeira-azul"></div>
+            <span>Papel</span>
+          </div>
+          <div>
+            <div class="lixeira-vermelha"></div>
+            <span>Plástico</span>
+          </div>
+          <div>
+            <div class="lixeira-verde"></div>
+            <span>Vidro</span>
+          </div>
+          <div>
+            <div class="lixeira-amarela"></div>
+            <span>Metal</span>
+          </div>
+          <div>
+            <div class="lixeira-preta"></div>
+            <span>Madeira</span>
+          </div>
+          <div>
+            <div class="lixeira-laranja"></div>
+            <span>Resíduos perigosos</span>
+          </div>
+          <div>
+            <div class="lixeira-branca"></div>
+            <span>Ambulatoriais/Saúde</span>
+          </div>
+          <div>
+            <div class="lixeira-roxa"></div>
+            <span>Radioativos</span>
+          </div>
+          <div>
+            <div class="lixeira-marrom"></div>
+            <span>Orgânicos</span>
+          </div>
+          <div>
+            <div class="lixeira-cinza"></div>
+            <span>Resíduos gerais não recicláveis</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="simular-decomposicao">
+        <h2>Simular decomposição</h2>
+        <span class="simular-decomposicao_texto">Saiba do tempo de decomposição e forma correta de descarte do <br>material</span>
+    
+        <div class="simulacao">
+
+        <div class="simulacao-card">
+          <form action="/" method="POST">
+            <div class="simulacao-card__form">
+            <label for="material">Selecione um material</label>
+            <select name="material" id="material">
+              <option value="">Selecione</option>
+              {% for material in mtrl %}
+                <option value="{{ material['nome'] }}" {% if selecionado and material['nome'] == selecionado['nome'] %}selected{% endif %}>
+                  {{ material['nome'] }}
+                </option>
+              {% endfor %}
+            </select>
+
+            </div> 
+            <div>
+              <button type="submit">Descobrir</button>
+            </div>
+          </form>
+
+        </div>
+
+          <div class="simulacao-infos">
+            <h4>Informações</h4>
+            <div class="simulacao-infos__list">
+              <span class="list-item">Tempo de decomposição: <span>{{ selecionado["tempo"] if selecionado else '' }}</span></span>
+              <span class="list-item">O material é reciclável? <span>{{ "Sim" if selecionado and selecionado["reciclavel"] else "Não" if selecionado else '' }}</span></span>
+              <span class="list-item">Em qual lixeira devo descartar? <span>{{ selecionado["lixeira"] if selecionado else ''  }}</span></span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section id="centros-reciclagem" class="centros-reciclagem">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d170211.88317573728!2d-47.9759216!3d-15.7846551!3m2!1i1024!2i768!4f13.1!2m1!1scentros%20de%20reciclagem%20brasilia!5e1!3m2!1spt-BR!2sbr!4v1752083126362!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        <div>
+            <h2>Centros de reciclagem localizados em Brasília</h2>
+            <p>Clique no mapa para ampliar</p>
+        </div>
+        
+      </section>
+    </main>
+  </body>
+</html>
